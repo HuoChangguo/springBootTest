@@ -1,0 +1,23 @@
+package com.example.demo;
+
+import java.util.HashMap;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class hello {
+	
+    @ResponseBody
+    @RequestMapping
+	public String heloWord() {
+	    return "HelloWord spring-boot";
+	}
+    @RequestMapping("/main")
+    public String helloHtml(HashMap<String, Object> map) {
+        map.put("hello", "欢迎进入HTML页面");
+        return "/main";
+    }
+}
+	
